@@ -3,7 +3,7 @@
 
   <div>
     <label>Firstname:</label>
-    <input formControlName="firstname" placeholder="firstname"
+    <input formControlName="firstname"
            type="text">
     <small *ngIf="form.get('firstname')?.getError('required') && form.get('firstname')?.touched">
       Firstname is required
@@ -11,7 +11,7 @@
   </div>
 
   <div><label>Lastname:</label>
-    <input formControlName="lastname" placeholder="lastname"
+    <input formControlName="lastname"
            type="text">
     <small *ngIf="form.get('lastname')?.getError('required') && form.get('lastname')?.touched">
       Lastname is required
@@ -20,7 +20,7 @@
 
   <div>
     <label>Location:</label>
-    <input formControlName="location" placeholder="location" type="text">
+    <input formControlName="location" type="text">
     <small *ngIf="form.get('location')?.getError('required') && form.get('location')?.touched">
       Location is required
     </small>
@@ -28,7 +28,7 @@
 
   <div formGroupName="userContactInfo">
     <div><label>E-mail:</label>
-      <input formControlName="email" placeholder="email"
+      <input formControlName="email"
              type="text">
       <small
         *ngIf="form.get('userContactInfo.email')?.getError('required') && form.get('userContactInfo.email')?.touched">
@@ -41,7 +41,7 @@
     </div>
 
     <div><label>Phone:</label>
-      <input formControlName="phone" placeholder="phone"
+      <input formControlName="phone"
              type="text">
       <small
         *ngIf="form.get('userContactInfo.phone')?.getError('required') && form.get('userContactInfo.phone')?.touched">
@@ -52,21 +52,22 @@
 
   <div formGroupName="resources">
     <div>
-      <label>Github Link</label>
-      <input formControlName="gitUrl" placeholder="Github" type="text">
+      <label>Github:</label>
+      <input formControlName="gitUrl"  type="text">
       <small *ngIf="form.get('resources.gitUrl')?.getError('pattern')">
         Incorrect Link
       </small>
     </div>
 
     <div>
-      <label>LinkedIn Link</label>
-      <input formControlName="linkedinUrl" placeholder="LinkedIn" type="text">
+      <label>LinkedIn:</label>
+      <input formControlName="linkedinUrl" type="text">
       <small *ngIf="form.get('resources.linkedinUrl')?.getError('pattern')">
         Incorrect Link
       </small>
     </div>
   </div>
+  <p>Experience:</p>
   <div>
     <button (click)="addExperience()" type="button">Add Experience</button>
   </div>
@@ -103,6 +104,7 @@
     </ng-container>
   </div>
 
+  <p>Education:</p>
   <div>
     <button (click)="addEducation()" class="arr" type="button">Add Education</button>
   </div>
